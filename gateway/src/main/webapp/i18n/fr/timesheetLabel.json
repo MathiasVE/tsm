@@ -1,0 +1,21 @@
+{
+    "gatewayApp": {
+        "timesheetLabel": {
+            "home": {
+                "title": "TimesheetLabels",
+                "createLabel": "Créer un nouveau Timesheet Label",
+                "createOrEditLabel": "Créer ou éditer un Timesheet Label"
+            },
+            "created": "Un nouveau Timesheet Label a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Timesheet Label avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Timesheet Label avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Timesheet Label {{ id }} ?"
+            },
+            "detail": {
+                "title": "Timesheet Label"
+            },
+            "label": "Label"
+        }
+    }
+}

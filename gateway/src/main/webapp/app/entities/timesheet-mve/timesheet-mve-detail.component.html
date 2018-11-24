@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="timesheet">
+            <h2><span jhiTranslate="gatewayApp.timesheet.detail.title">Timesheet</span> {{timesheet.id}}</h2>
+            <hr>
+            <tsmjhi-alert-error></tsmjhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewayApp.timesheet.user">User</span></dt>
+                <dd>
+                    <span>{{timesheet.user}}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.timesheet.entries">Entries</span></dt>
+                <dd>
+                    <div *ngIf="timesheet.entriesId">
+                        <a [routerLink]="['/timesheet-entry-mve', timesheet.entriesId, 'view']">{{timesheet.entriesId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/timesheet-mve', timesheet.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

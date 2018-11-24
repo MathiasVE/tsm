@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "enableHibernateCache": true,
+    "enableSwaggerCodegen": false,
+    "enableTranslation": true,
+    "jhiPrefix": "tsmjhi",
+    "languages": [
+      "en",
+      "fr",
+      "nl",
+      "ja"
+    ],
+    "messageBroker": false,
+    "nativeLanguage": "en",
+    "packageName": "be.mve.tsm",
+    "packageFolder": "be/mve/tsm",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "testFrameworks": [],
+    "websocket": false,
+    "baseName": "tsm",
+    "applicationType": "microservice",
+    "serverPort": "8082",
+    "authenticationType": "uaa",
+    "uaaBaseName": "uaa",
+    "cacheProvider": "hazelcast",
+    "jhipsterVersion": "5.7.0",
+    "buildTool": "maven",
+    "skipUserManagement": true,
+    "clientPackageManager": "npm",
+    "otherModules": []
+  },
+  "entities": [
+    "Timesheet",
+    "TimesheetEntry",
+    "TimesheetLabel",
+    "Holiday"
+  ]
+}

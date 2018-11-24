@@ -1,0 +1,25 @@
+{
+    "gatewayApp": {
+        "timesheetEntry": {
+            "home": {
+                "title": "TimesheetEntries",
+                "createLabel": "Créer un nouveau Timesheet Entry",
+                "createOrEditLabel": "Créer ou éditer un Timesheet Entry"
+            },
+            "created": "Un nouveau Timesheet Entry a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Timesheet Entry avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Timesheet Entry avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Timesheet Entry {{ id }} ?"
+            },
+            "detail": {
+                "title": "Timesheet Entry"
+            },
+            "date": "Date",
+            "from": "From",
+            "until": "Until",
+            "remark": "Remark",
+            "labels": "Labels"
+        }
+    }
+}

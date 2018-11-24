@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="holiday">
+            <h2><span jhiTranslate="gatewayApp.holiday.detail.title">Holiday</span> {{holiday.id}}</h2>
+            <hr>
+            <tsmjhi-alert-error></tsmjhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewayApp.holiday.name">Name</span></dt>
+                <dd>
+                    <span>{{holiday.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.holiday.date">Date</span></dt>
+                <dd>
+                    <span>{{holiday.date}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/holiday-mve', holiday.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

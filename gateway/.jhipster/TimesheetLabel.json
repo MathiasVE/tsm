@@ -1,0 +1,23 @@
+{
+    "name": "TimesheetLabel",
+    "fields": [
+        {
+            "fieldName": "label",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181124130209",
+    "entityTableName": "timesheet_label",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "gateway",
+        "tsm"
+    ],
+    "angularJSSuffix": "mve"
+}

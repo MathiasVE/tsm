@@ -1,0 +1,22 @@
+{
+    "gatewayApp": {
+        "holiday": {
+            "home": {
+                "title": "Holidays",
+                "createLabel": "Maak een nieuwe Holiday",
+                "createOrEditLabel": "Maak of wijzig een Holiday"
+            },
+            "created": "A new Holiday is created with identifier {{ param }}",
+            "updated": "A Holiday is updated with identifier {{ param }}",
+            "deleted": "A Holiday is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Holiday {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Holiday"
+            },
+            "name": "Name",
+            "date": "Date"
+        }
+    }
+}

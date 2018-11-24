@@ -1,0 +1,25 @@
+{
+    "gatewayApp": {
+        "timesheetEntry": {
+            "home": {
+                "title": "TimesheetEntries",
+                "createLabel": "Timesheet Entry を追加",
+                "createOrEditLabel": "Timesheet Entryを追加または編集"
+            },
+            "created": "A new Timesheet Entry is created with identifier {{ param }}",
+            "updated": "A Timesheet Entry is updated with identifier {{ param }}",
+            "deleted": "A Timesheet Entry is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Timesheet Entry {{ id }}を削除してもよろしいですか？"
+            },
+            "detail": {
+                "title": "Timesheet Entry"
+            },
+            "date": "Date",
+            "from": "From",
+            "until": "Until",
+            "remark": "Remark",
+            "labels": "Labels"
+        }
+    }
+}

@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="tsmjhi-timesheet-mve-heading" jhiTranslate="gatewayApp.timesheet.home.createOrEditLabel">Create or edit a Timesheet</h2>
+            <div>
+                <tsmjhi-alert-error></tsmjhi-alert-error>
+                <div class="form-group" [hidden]="!timesheet.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="timesheet.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.timesheet.user" for="field_user">User</label>
+                    <input type="text" class="form-control" name="user" id="field_user"
+                        [(ngModel)]="timesheet.user" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayApp.timesheet.entries" for="field_entries">Entries</label>
+                    <select class="form-control" id="field_entries" name="entries" [(ngModel)]="timesheet.entriesId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="timesheetEntryOption.id" *ngFor="let timesheetEntryOption of timesheetentries; trackBy: trackTimesheetEntryById">{{timesheetEntryOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

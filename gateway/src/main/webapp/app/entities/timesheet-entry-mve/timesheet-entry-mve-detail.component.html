@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="timesheetEntry">
+            <h2><span jhiTranslate="gatewayApp.timesheetEntry.detail.title">Timesheet Entry</span> {{timesheetEntry.id}}</h2>
+            <hr>
+            <tsmjhi-alert-error></tsmjhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewayApp.timesheetEntry.date">Date</span></dt>
+                <dd>
+                    <span>{{timesheetEntry.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.timesheetEntry.from">From</span></dt>
+                <dd>
+                    <span>{{timesheetEntry.from}}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.timesheetEntry.until">Until</span></dt>
+                <dd>
+                    <span>{{timesheetEntry.until}}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.timesheetEntry.remark">Remark</span></dt>
+                <dd>
+                    <span>{{timesheetEntry.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewayApp.timesheetEntry.labels">Labels</span></dt>
+                <dd>
+                    <div *ngIf="timesheetEntry.labelsId">
+                        <a [routerLink]="['/timesheet-label-mve', timesheetEntry.labelsId, 'view']">{{timesheetEntry.labelsId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/timesheet-entry-mve', timesheetEntry.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

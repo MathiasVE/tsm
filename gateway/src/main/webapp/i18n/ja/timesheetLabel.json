@@ -1,0 +1,21 @@
+{
+    "gatewayApp": {
+        "timesheetLabel": {
+            "home": {
+                "title": "TimesheetLabels",
+                "createLabel": "Timesheet Label を追加",
+                "createOrEditLabel": "Timesheet Labelを追加または編集"
+            },
+            "created": "A new Timesheet Label is created with identifier {{ param }}",
+            "updated": "A Timesheet Label is updated with identifier {{ param }}",
+            "deleted": "A Timesheet Label is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Timesheet Label {{ id }}を削除してもよろしいですか？"
+            },
+            "detail": {
+                "title": "Timesheet Label"
+            },
+            "label": "Label"
+        }
+    }
+}

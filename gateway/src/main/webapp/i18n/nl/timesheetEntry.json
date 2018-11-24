@@ -1,0 +1,25 @@
+{
+    "gatewayApp": {
+        "timesheetEntry": {
+            "home": {
+                "title": "Timesheet Entries",
+                "createLabel": "Maak een nieuwe Timesheet Entry",
+                "createOrEditLabel": "Maak of wijzig een Timesheet Entry"
+            },
+            "created": "A new Timesheet Entry is created with identifier {{ param }}",
+            "updated": "A Timesheet Entry is updated with identifier {{ param }}",
+            "deleted": "A Timesheet Entry is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Timesheet Entry {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Timesheet Entry"
+            },
+            "date": "Date",
+            "from": "From",
+            "until": "Until",
+            "remark": "Remark",
+            "labels": "Labels"
+        }
+    }
+}

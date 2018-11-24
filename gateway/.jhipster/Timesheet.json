@@ -1,0 +1,30 @@
+{
+    "name": "Timesheet",
+    "fields": [
+        {
+            "fieldName": "user",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "entries",
+            "otherEntityName": "timesheetEntry",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181124130207",
+    "entityTableName": "timesheet",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "gateway",
+        "tsm"
+    ],
+    "angularJSSuffix": "mve"
+}

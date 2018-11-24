@@ -1,0 +1,91 @@
+application {
+  config {
+    baseName gateway
+    applicationType gateway
+	packageName be.mve.tsm
+	authenticationType uaa
+    serverPort 9042
+	uaaBaseName "uaa"
+	serviceDiscoveryType eureka
+	prodDatabaseType postgresql
+	cacheProvider hazelcast
+	useSass true
+	jhiPrefix tsmjhi
+	languages [en,fr,nl,ja]
+  }
+  entities *
+}
+
+application {
+  config {
+    baseName uaa
+    applicationType uaa
+	authenticationType uaa
+	packageName be.mve.tsm
+	buildTool maven
+	serviceDiscoveryType eureka
+	prodDatabaseType postgresql
+	cacheProvider hazelcast
+	jhiPrefix tsmjhi
+	languages [en,fr,nl,ja]
+	serverPort 9999
+	skipClient true
+  }
+}
+
+application {
+  config {
+    baseName tsm
+	packageName be.mve.tsm
+    applicationType microservice
+    serverPort 8082
+	authenticationType uaa
+	uaaBaseName "uaa"
+	serviceDiscoveryType eureka
+	prodDatabaseType postgresql
+	cacheProvider hazelcast
+	jhiPrefix tsmjhi
+	languages [en,fr,nl,ja]
+	skipClient true
+  }
+  entities *
+}
+
+
+entity Timesheet {
+    user String
+}
+
+entity TimesheetEntry {
+    date LocalDate,
+    from Instant,
+    until Instant,
+    remark String
+}
+
+entity TimesheetLabel {
+	label String
+}
+
+entity Holiday {
+    name String,
+    date LocalDate
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Timesheet{entries} to TimesheetEntry
+	TimesheetEntry{labels} to TimesheetLabel
+}
+
+// Set pagination options
+paginate TimesheetEntry with infinite-scroll
+paginate Holiday, TimesheetLabel, Timesheet with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with mve
+

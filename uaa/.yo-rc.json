@@ -1,0 +1,37 @@
+{
+  "generator-jhipster": {
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "enableHibernateCache": true,
+    "enableSwaggerCodegen": false,
+    "enableTranslation": true,
+    "jhiPrefix": "tsmjhi",
+    "languages": [
+      "en",
+      "fr",
+      "nl",
+      "ja"
+    ],
+    "messageBroker": false,
+    "nativeLanguage": "en",
+    "packageName": "be.mve.tsm",
+    "packageFolder": "be/mve/tsm",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "testFrameworks": [],
+    "websocket": false,
+    "baseName": "uaa",
+    "applicationType": "uaa",
+    "authenticationType": "uaa",
+    "buildTool": "maven",
+    "cacheProvider": "hazelcast",
+    "serverPort": "9999",
+    "jhipsterVersion": "5.7.0",
+    "skipUserManagement": false,
+    "clientPackageManager": "npm",
+    "otherModules": []
+  },
+  "entities": []
+}
