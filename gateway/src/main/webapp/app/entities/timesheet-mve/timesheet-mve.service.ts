@@ -11,7 +11,7 @@ type EntityArrayResponseType = HttpResponse<ITimesheetMve[]>;
 
 @Injectable({ providedIn: 'root' })
 export class TimesheetMveService {
-    public resourceUrl = SERVER_API_URL + 'api/timesheets';
+    public resourceUrl = SERVER_API_URL + 'tsm/api/timesheets';
 
     constructor(private http: HttpClient) {}
 

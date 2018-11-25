@@ -1,0 +1,12 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewayApp.timesheetCsv.home.title">Timesheet Csv</span>
+    </h2>
+    <p-growl [value]="messages" name="basic"></p-growl>
+    <p-fileUpload mode="basic" name="files[]"
+                  multiple="false" accept=".csv"
+                  auto="auto"
+                  maxFileSize="50000"
+                  customUpload="true" (uploadHandler)="upload($event)">
+    </p-fileUpload>
+</div>

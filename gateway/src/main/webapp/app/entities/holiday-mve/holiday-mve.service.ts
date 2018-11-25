@@ -14,7 +14,7 @@ type EntityArrayResponseType = HttpResponse<IHolidayMve[]>;
 
 @Injectable({ providedIn: 'root' })
 export class HolidayMveService {
-    public resourceUrl = SERVER_API_URL + 'api/holidays';
+    public resourceUrl = SERVER_API_URL + 'tsm/api/holidays';
 
     constructor(private http: HttpClient) {}
 
