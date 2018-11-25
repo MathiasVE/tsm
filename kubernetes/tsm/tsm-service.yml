@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tsm
+  namespace: default
+  labels:
+    app: tsm
+spec:
+  selector:
+    app: tsm
+  ports:
+  - name: http
+    port: 8082

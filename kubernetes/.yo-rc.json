@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [
+      "gateway",
+      "tsm",
+      "uaa"
+    ],
+    "directoryPath": "../",
+    "serviceDiscoveryType": "eureka",
+    "jwtSecretKey": "YTlkYmJmZjA4MTdlOWNlYTM2MTQyMGQ4ZTgyNWYyMDZiZTVlZjA4M2I3ZjdlZGYxZWY5NmQ0OGI2M2ZiMDkzYTI3ODZkN2ZmOGRmMTcwYWFmYjYzNWNhNDczOTY1MjEwOWU4Zg==",
+    "dockerRepositoryName": "mathiasve",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "default",
+    "kubernetesServiceType": "LoadBalancer",
+    "monitoring": "no",
+    "istio": "no",
+    "istioRoute": false
+  }
+}
