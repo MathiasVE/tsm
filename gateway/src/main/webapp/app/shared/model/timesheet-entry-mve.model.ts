@@ -7,6 +7,7 @@ export interface ITimesheetEntryMve {
     until?: Moment;
     remark?: string;
     labelsId?: number;
+    timesheetId?: number;
 }
 
 export class TimesheetEntryMve implements ITimesheetEntryMve {
@@ -16,6 +17,7 @@ export class TimesheetEntryMve implements ITimesheetEntryMve {
         public from?: Moment,
         public until?: Moment,
         public remark?: string,
-        public labelsId?: number
+        public labelsId?: number,
+        public timesheetId?: number
     ) {}
 }

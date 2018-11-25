@@ -19,7 +19,8 @@
             "from": "From",
             "until": "Until",
             "remark": "Remark",
-            "labels": "Labels"
+            "labels": "Labels",
+            "timesheet": "Timesheet"
         }
     }
 }

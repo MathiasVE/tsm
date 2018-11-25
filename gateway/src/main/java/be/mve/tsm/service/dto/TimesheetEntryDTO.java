@@ -22,6 +22,8 @@ public class TimesheetEntryDTO implements Serializable {
 
     private Long labelsId;
 
+    private Long timesheetId;
+
     public Long getId() {
         return id;
     }
@@ -70,6 +72,14 @@ public class TimesheetEntryDTO implements Serializable {
         this.labelsId = timesheetLabelId;
     }
 
+    public Long getTimesheetId() {
+        return timesheetId;
+    }
+
+    public void setTimesheetId(Long timesheetId) {
+        this.timesheetId = timesheetId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -100,6 +110,7 @@ public class TimesheetEntryDTO implements Serializable {
             ", until='" + getUntil() + "'" +
             ", remark='" + getRemark() + "'" +
             ", labels=" + getLabelsId() +
+            ", timesheet=" + getTimesheetId() +
             "}";
     }
 }

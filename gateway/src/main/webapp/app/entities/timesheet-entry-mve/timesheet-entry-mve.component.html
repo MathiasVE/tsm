@@ -20,6 +20,7 @@
             <th jhiSortBy="until"><span jhiTranslate="gatewayApp.timesheetEntry.until">Until</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="remark"><span jhiTranslate="gatewayApp.timesheetEntry.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="labelsId"><span jhiTranslate="gatewayApp.timesheetEntry.labels">Labels</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="timesheetId"><span jhiTranslate="gatewayApp.timesheetEntry.timesheet">Timesheet</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -33,6 +34,11 @@
                 <td>
                     <div *ngIf="timesheetEntry.labelsId">
                         <a [routerLink]="['../timesheet-label-mve', timesheetEntry.labelsId , 'view' ]" >{{timesheetEntry.labelsId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="timesheetEntry.timesheetId">
+                        <a [routerLink]="['../timesheet-mve', timesheetEntry.timesheetId , 'view' ]" >{{timesheetEntry.timesheetId}}</a>
                     </div>
                 </td>
                 <td class="text-right">

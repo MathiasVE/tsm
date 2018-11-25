@@ -14,5 +14,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="timesheet_label"/>
 
+        <addForeignKeyConstraint baseColumnNames="timesheet_id"
+                                 baseTableName="timesheet_entry"
+                                 constraintName="fk_timesheet_entry_timesheet_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="timesheet"/>
+
     </changeSet>
 </databaseChangeLog>

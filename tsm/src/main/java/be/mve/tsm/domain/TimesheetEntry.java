@@ -42,6 +42,10 @@ public class TimesheetEntry implements Serializable {
     @JsonIgnoreProperties("")
     private TimesheetLabel labels;
 
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Timesheet timesheet;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -114,6 +118,19 @@ public class TimesheetEntry implements Serializable {
 
     public void setLabels(TimesheetLabel timesheetLabel) {
         this.labels = timesheetLabel;
+    }
+
+    public Timesheet getTimesheet() {
+        return timesheet;
+    }
+
+    public TimesheetEntry timesheet(Timesheet timesheet) {
+        this.timesheet = timesheet;
+        return this;
+    }
+
+    public void setTimesheet(Timesheet timesheet) {
+        this.timesheet = timesheet;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
