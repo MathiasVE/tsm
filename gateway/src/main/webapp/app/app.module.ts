@@ -17,6 +17,7 @@ import { GatewayHomeModule } from './home/home.module';
 import { GatewayAccountModule } from './account/account.module';
 import { GatewayEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
+import { GatewayprimengModule } from './primeng/primeng.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { TsmjhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
 
@@ -36,6 +37,7 @@ import { TsmjhiMainComponent, NavbarComponent, FooterComponent, PageRibbonCompon
         GatewayCoreModule,
         GatewayHomeModule,
         GatewayAccountModule,
+        GatewayprimengModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
         GatewayEntityModule
     ],
