@@ -27,6 +27,12 @@
                         <a [routerLink]="['/timesheet-label-mve', timesheetEntry.labelsId, 'view']">{{timesheetEntry.labelsId}}</a>
                     </div>
                 </dd>
+                <dt><span jhiTranslate="gatewayApp.timesheetEntry.timesheet">Timesheet</span></dt>
+                <dd>
+                    <div *ngIf="timesheetEntry.timesheetId">
+                        <a [routerLink]="['/timesheet-mve', timesheetEntry.timesheetId, 'view']">{{timesheetEntry.timesheetId}}</a>
+                    </div>
+                </dd>
             </dl>
 
             <button type="submit"

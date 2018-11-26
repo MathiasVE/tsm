@@ -78,6 +78,10 @@ relationship OneToMany {
 	TimesheetEntry{labels} to TimesheetLabel
 }
 
+relationship ManyToOne {
+  TimesheetEntry{timesheet} to Timesheet
+}
+
 // Set pagination options
 paginate TimesheetEntry with infinite-scroll
 paginate Holiday, TimesheetLabel, Timesheet with pagination

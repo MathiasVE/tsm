@@ -10,6 +10,8 @@ import { ITimesheetEntryMve } from 'app/shared/model/timesheet-entry-mve.model';
 import { TimesheetEntryMveService } from './timesheet-entry-mve.service';
 import { ITimesheetLabelMve } from 'app/shared/model/timesheet-label-mve.model';
 import { TimesheetLabelMveService } from 'app/entities/timesheet-label-mve';
+import { ITimesheetMve } from 'app/shared/model/timesheet-mve.model';
+import { TimesheetMveService } from 'app/entities/timesheet-mve';
 
 @Component({
     selector: 'tsmjhi-timesheet-entry-mve-update',
@@ -20,6 +22,8 @@ export class TimesheetEntryMveUpdateComponent implements OnInit {
     isSaving: boolean;
 
     timesheetlabels: ITimesheetLabelMve[];
+
+    timesheets: ITimesheetMve[];
     dateDp: any;
     from: string;
     until: string;
@@ -28,6 +32,7 @@ export class TimesheetEntryMveUpdateComponent implements OnInit {
         private jhiAlertService: JhiAlertService,
         private timesheetEntryService: TimesheetEntryMveService,
         private timesheetLabelService: TimesheetLabelMveService,
+        private timesheetService: TimesheetMveService,
         private activatedRoute: ActivatedRoute
     ) {}
 
@@ -41,6 +46,12 @@ export class TimesheetEntryMveUpdateComponent implements OnInit {
         this.timesheetLabelService.query().subscribe(
             (res: HttpResponse<ITimesheetLabelMve[]>) => {
                 this.timesheetlabels = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
+        this.timesheetService.query().subscribe(
+            (res: HttpResponse<ITimesheetMve[]>) => {
+                this.timesheets = res.body;
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
@@ -79,6 +90,10 @@ export class TimesheetEntryMveUpdateComponent implements OnInit {
     }
 
     trackTimesheetLabelById(index: number, item: ITimesheetLabelMve) {
+        return item.id;
+    }
+
+    trackTimesheetById(index: number, item: ITimesheetMve) {
         return item.id;
     }
 }
