@@ -80,6 +80,7 @@ relationship OneToMany {
 
 relationship ManyToOne {
   TimesheetEntry{timesheet} to Timesheet
+  TimesheetLabel{timesheetEntry} to TimesheetEntry
 }
 
 // Set pagination options
