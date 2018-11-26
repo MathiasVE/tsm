@@ -4,7 +4,7 @@ import {Message} from 'primeng/components/common/api';
 import {TimesheetCsvMveService} from './timesheet-csv-mve.service';
 
 @Component({
-    selector: 'jhi-timesheet-csv-mve',
+    selector: 'tsmjhi-timesheet-csv-mve',
     templateUrl: './timesheet-csv-mve.component.html',
     styles: []
 })
