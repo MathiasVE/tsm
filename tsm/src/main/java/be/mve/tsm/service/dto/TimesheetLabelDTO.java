@@ -12,6 +12,8 @@ public class TimesheetLabelDTO implements Serializable {
 
     private String label;
 
+    private Long timesheetEntryId;
+
     public Long getId() {
         return id;
     }
@@ -26,6 +28,14 @@ public class TimesheetLabelDTO implements Serializable {
 
     public void setLabel(String label) {
         this.label = label;
+    }
+
+    public Long getTimesheetEntryId() {
+        return timesheetEntryId;
+    }
+
+    public void setTimesheetEntryId(Long timesheetEntryId) {
+        this.timesheetEntryId = timesheetEntryId;
     }
 
     @Override
@@ -54,6 +64,7 @@ public class TimesheetLabelDTO implements Serializable {
         return "TimesheetLabelDTO{" +
             "id=" + getId() +
             ", label='" + getLabel() + "'" +
+            ", timesheetEntry=" + getTimesheetEntryId() +
             "}";
     }
 }

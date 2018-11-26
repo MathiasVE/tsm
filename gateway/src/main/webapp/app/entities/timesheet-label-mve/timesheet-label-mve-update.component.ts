@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { JhiAlertService } from 'ng-jhipster';
 
 import { ITimesheetLabelMve } from 'app/shared/model/timesheet-label-mve.model';
 import { TimesheetLabelMveService } from './timesheet-label-mve.service';
+import { ITimesheetEntryMve } from 'app/shared/model/timesheet-entry-mve.model';
+import { TimesheetEntryMveService } from 'app/entities/timesheet-entry-mve';
 
 @Component({
     selector: 'tsmjhi-timesheet-label-mve-update',
@@ -14,13 +17,26 @@ export class TimesheetLabelMveUpdateComponent implements OnInit {
     timesheetLabel: ITimesheetLabelMve;
     isSaving: boolean;
 
-    constructor(private timesheetLabelService: TimesheetLabelMveService, private activatedRoute: ActivatedRoute) {}
+    timesheetentries: ITimesheetEntryMve[];
+
+    constructor(
+        private jhiAlertService: JhiAlertService,
+        private timesheetLabelService: TimesheetLabelMveService,
+        private timesheetEntryService: TimesheetEntryMveService,
+        private activatedRoute: ActivatedRoute
+    ) {}
 
     ngOnInit() {
         this.isSaving = false;
         this.activatedRoute.data.subscribe(({ timesheetLabel }) => {
             this.timesheetLabel = timesheetLabel;
         });
+        this.timesheetEntryService.query().subscribe(
+            (res: HttpResponse<ITimesheetEntryMve[]>) => {
+                this.timesheetentries = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
     }
 
     previousState() {
@@ -47,5 +63,13 @@ export class TimesheetLabelMveUpdateComponent implements OnInit {
 
     private onSaveError() {
         this.isSaving = false;
+    }
+
+    private onError(errorMessage: string) {
+        this.jhiAlertService.error(errorMessage, null, null);
+    }
+
+    trackTimesheetEntryById(index: number, item: ITimesheetEntryMve) {
+        return item.id;
     }
 }

@@ -1,5 +1,6 @@
 package be.mve.tsm.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -26,6 +27,10 @@ public class TimesheetLabel implements Serializable {
     @Column(name = "tsmjhi_label")
     private String label;
 
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private TimesheetEntry timesheetEntry;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -46,6 +51,19 @@ public class TimesheetLabel implements Serializable {
 
     public void setLabel(String label) {
         this.label = label;
+    }
+
+    public TimesheetEntry getTimesheetEntry() {
+        return timesheetEntry;
+    }
+
+    public TimesheetLabel timesheetEntry(TimesheetEntry timesheetEntry) {
+        this.timesheetEntry = timesheetEntry;
+        return this;
+    }
+
+    public void setTimesheetEntry(TimesheetEntry timesheetEntry) {
+        this.timesheetEntry = timesheetEntry;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

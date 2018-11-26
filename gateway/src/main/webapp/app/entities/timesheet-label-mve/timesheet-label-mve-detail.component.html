@@ -9,6 +9,12 @@
                 <dd>
                     <span>{{timesheetLabel.label}}</span>
                 </dd>
+                <dt><span jhiTranslate="gatewayApp.timesheetLabel.timesheetEntry">Timesheet Entry</span></dt>
+                <dd>
+                    <div *ngIf="timesheetLabel.timesheetEntryId">
+                        <a [routerLink]="['/timesheet-entry-mve', timesheetLabel.timesheetEntryId, 'view']">{{timesheetLabel.timesheetEntryId}}</a>
+                    </div>
+                </dd>
             </dl>
 
             <button type="submit"
