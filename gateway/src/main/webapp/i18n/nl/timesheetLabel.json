@@ -15,7 +15,8 @@
             "detail": {
                 "title": "Timesheet Label"
             },
-            "label": "Label"
+            "label": "Label",
+            "timesheetEntry": "Timesheet Entry"
         }
     }
 }

@@ -16,6 +16,7 @@
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="label"><span jhiTranslate="gatewayApp.timesheetLabel.label">Label</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="timesheetEntryId"><span jhiTranslate="gatewayApp.timesheetLabel.timesheetEntry">Timesheet Entry</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -23,6 +24,11 @@
             <tr *ngFor="let timesheetLabel of timesheetLabels ;trackBy: trackId">
                 <td><a [routerLink]="['/timesheet-label-mve', timesheetLabel.id, 'view' ]">{{timesheetLabel.id}}</a></td>
                 <td>{{timesheetLabel.label}}</td>
+                <td>
+                    <div *ngIf="timesheetLabel.timesheetEntryId">
+                        <a [routerLink]="['../timesheet-entry-mve', timesheetLabel.timesheetEntryId , 'view' ]" >{{timesheetLabel.timesheetEntryId}}</a>
+                    </div>
+                </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
